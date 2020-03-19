@@ -26,8 +26,8 @@ function App() {
        return(
       tasks.map((tasks,index)=>{
         return(<li key ={index}>{tasks.id}:{tasks.name}
-        <button class="btn btn-danger" onClick={()=>DeleteTask(tasks.id)}>Delete</button>
-        <button class="btn btn-primary" onClick={()=>EditTask(tasks.id)}>Edit</button>
+        <button class="btn btn-warning" onClick={()=>DeleteTask(tasks.id)}>ลบ</button>
+        <button class="btn btn-primary" onClick={()=>EditTask(tasks.id)}>แก้ไข</button>
         </li>)
       })
       )
@@ -47,11 +47,11 @@ function App() {
    firestore.collection("tasks").doc(id+'').set({id,name})
  }
   return (
-    <div >
-     <h2>Todo firebase08</h2>
+    <div align="center" >
+     <h1 className="rdTestbt1">Todo firebase08</h1>
       <ul>{ renderTask() }</ul>
       <input type="text" name="name" onChange={ (e)=>setName(e.target.value)}/>
-      <button class="btn btn-success" onClick={addTask}>Submit</button>
+      <button class="btn btn-info" onClick={addTask}>กดยืนยัน</button>
     </div>
   );
 }
